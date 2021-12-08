@@ -1,0 +1,17 @@
+name: Docker image test
+
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    container: adnanmoussa/computational-workflows-homework
+    
+    steps:
+      - name: Testingg
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: |
+          python3 -m pytest
+
